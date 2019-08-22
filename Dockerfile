@@ -28,6 +28,16 @@ RUN ${PIP3} install \
   django-webpack-loader \
   django-cors-headers \
   django-environ \
+  django-storages \
+  boto3 \
+  djangorestframework-csv \
+  drf-flex-fields \
+  django-phonenumber-field \
+  djangorestframework \
+  phonenumbers \
+  google-api-python-client \
+  oauth2client \
+  google-ads \
   request \
   gunicorn \
   whitenoise \
