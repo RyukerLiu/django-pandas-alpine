@@ -8,6 +8,7 @@ RUN apk update --no-cache && \
       build-base \
       postgresql-client \
       postgresql-dev \
+      nano \
       bash \
       gfortran \
       gettext \
