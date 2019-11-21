@@ -45,5 +45,6 @@ RUN ${PIP3} install \
   numpy \
   pandas \
   Pillow \
-  grpcio
+  grpcio \
+  facebook_business
   
