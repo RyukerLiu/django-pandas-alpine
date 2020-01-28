@@ -2,50 +2,35 @@ FROM python:3.7-alpine
 
 ARG PIP3="/root/site/bin/pip3"
 
-RUN apk add --no-cache --virtual .build-deps gcc musl-dev \
-    && pip install cython \
-    && apk del .build-deps
 
 RUN apk update --no-cache && \
-    apk add --virtual \
-      build-base \
-      postgresql-client \
-      postgresql-dev \
-      nano \
-      bash \
-      gfortran \
-      gettext \
-      gettext-dev \
-      freetype-dev \
-      openblas-dev \
-      libffi-dev \
-      libpng-dev \
-      jpeg-dev \
-      zlib-dev
+    apk add --no-cache python3-dev libstdc++ && \
+    apk add --no-cache g++ && \
+    ln -s /usr/include/locale.h /usr/include/xlocale.h
 
 RUN python3.7 -m venv /root/site
 RUN ${PIP3} install -U pip
-RUN ${PIP3} install \
-  django \
-  django-webpack-loader \
-  django-cors-headers \
-  django-environ \
-  django-storages \
-  boto3 \
-  djangorestframework-csv \
-  drf-flex-fields \
-  django-phonenumber-field \
-  djangorestframework \
-  phonenumbers \
-  google-api-python-client \
-  oauth2client \
-  google-ads \
-  request \
-  gunicorn \
-  whitenoise \
-  numpy \
-  pandas \
-  Pillow \
-  grpcio \
-  facebook_business
+RUN ${PIP3} install cython && \
+  ${PIP3} install numpy && \
+  ${PIP3} install django && \
+  ${PIP3} install django-webpack-loader && \
+  ${PIP3} install django-cors-headers && \
+  ${PIP3} install django-environ && \
+  ${PIP3} install django-storages && \
+  ${PIP3} install boto3 && \
+  ${PIP3} install djangorestframework-csv && \
+  ${PIP3} install drf-flex-fields && \
+  ${PIP3} install django-phonenumber-field && \
+  ${PIP3} install djangorestframework && \
+  ${PIP3} install phonenumbers && \
+  ${PIP3} install google-api-python-client && \
+  ${PIP3} install oauth2client && \
+  ${PIP3} install google-ads && \
+  ${PIP3} install request && \
+  ${PIP3} install gunicorn && \
+  ${PIP3} install whitenoise && \
+  ${PIP3} install pandas && \
+  ${PIP3} install Pillow && \
+  ${PIP3} install grpcio && \
+  ${PIP3} install facebook_business
   
