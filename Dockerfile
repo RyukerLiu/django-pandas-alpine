@@ -2,9 +2,12 @@ FROM python:3.7-alpine
 
 ARG PIP3="/root/site/bin/pip3"
 
+RUN apk add --no-cache --virtual .build-deps gcc musl-dev \
+    && pip install cython \
+    && apk del .build-deps
+
 RUN apk update --no-cache && \
     apk add --virtual \
-      .build-deps \
       build-base \
       postgresql-client \
       postgresql-dev \
@@ -15,12 +18,10 @@ RUN apk update --no-cache && \
       gettext-dev \
       freetype-dev \
       openblas-dev \
-      musl-dev \
       libffi-dev \
       libpng-dev \
       jpeg-dev \
-      zlib-dev \
-      gcc
+      zlib-dev
 
 RUN python3.7 -m venv /root/site
 RUN ${PIP3} install -U pip
