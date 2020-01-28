@@ -6,6 +6,18 @@ ARG PIP3="/root/site/bin/pip3"
 RUN apk update --no-cache && \
     apk add --no-cache python3-dev libstdc++ && \
     apk add --no-cache g++ && \
+    apk add --no-cache postgresql-client && \
+    apk add --no-cache postgresql-dev && \
+    apk add --no-cache bash && \
+    apk add --no-cache gfortran && \
+    apk add --no-cache gettext && \
+    apk add --no-cache gettext-dev && \
+    apk add --no-cache freetype-dev && \
+    apk add --no-cache openblas-dev && \
+    apk add --no-cache libffi-dev && \
+    apk add --no-cache libpng-dev && \
+    apk add --no-cache jpeg-dev && \
+    apk add --no-cache zlib-dev && \
     ln -s /usr/include/locale.h /usr/include/xlocale.h
 
 RUN python3.7 -m venv /root/site
