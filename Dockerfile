@@ -35,6 +35,6 @@ RUN ${PIP3} install cython && \
   ${PIP3} install Pillow && \
   ${PIP3} install grpcio && \
   ${PIP3} install facebook_business && \
-  ${PIP3} install opencv-python
+  ${PIP3} install opencv-python-headless
   
   
