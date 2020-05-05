@@ -39,6 +39,7 @@ RUN ${PIP3} install cython && \
   ${PIP3} install grpcio && \
   ${PIP3} install facebook_business && \
   ${PIP3} install opencv-python-headless && \
-  ${PIP3} install feedparser
+  ${PIP3} install feedparser && \
+  ${PIP3} install wheel
   
   
