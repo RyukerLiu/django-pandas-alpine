@@ -31,7 +31,7 @@ RUN ${PIP3} install cython && \
   ${PIP3} install google-api-python-client && \
   ${PIP3} install oauth2client && \
   ${PIP3} install google-ads && \
-  ${PIP3} install request && \
+  ${PIP3} install requests && \
   ${PIP3} install gunicorn && \
   ${PIP3} install whitenoise && \
   ${PIP3} install pandas && \
